@@ -19,7 +19,7 @@ let val = Math.floor(Math.random() *5 ) + "db_payment_ok ";
 let utente = "claudio"
 function dbStruff () {
     const value = "payment_complete"
-
+    console.log("setting values: " + utente + ", event " + value)
     db.collection(table).doc(utente)
           .set({ user: utente, event:value}, { merge:false});
 
