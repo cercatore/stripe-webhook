@@ -7,7 +7,7 @@ const endpointSecret = 'whsec_6d69735ad8569d0bfe93dc969e3ec14ae6f555739039e8c16e
 const express = require('express');
 const app = express();
 // ^^^ not needed;
-const {strunz} = require('/zindex.js');
+const {strunz} = require('./zindex.js');
 
 app.post('/webhook', express.raw({type: 'application/json'}), (request, response) => {
     let event = request.body;
