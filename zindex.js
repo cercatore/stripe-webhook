@@ -21,7 +21,7 @@ function dbStruff () {
     const value = "payment_complete"
     console.log("setting values: " + utente + ", event " + value)
     db.collection(table).doc(utente)
-          .set({ user: utente, event:value}});
+          .set({ user: utente, event:value});
 
 }
 
