@@ -6,6 +6,9 @@ const stripe = require('stripe')('sk_test_51O601THRx8IgMk2MO0K3BIBPTt1Sytra8OTd8
 const endpointSecret = 'whsec_6d69735ad8569d0bfe93dc969e3ec14ae6f555739039e8c16e526ea41fc654c4';
 const express = require('express');
 const app = express();
+// ^^^ not needed;
+const {strunz} = require('/zindex.js');
+
 app.post('/webhook', express.raw({type: 'application/json'}), (request, response) => {
     let event = request.body;
     // Only verify the event if you have an endpoint secret defined.
@@ -32,6 +35,7 @@ app.post('/webhook', express.raw({type: 'application/json'}), (request, response
         console.log(`PaymentIntent for ${paymentIntent.amount} was successful!`);
         // Then define and call a method to handle the successful payment intent.
         // handlePaymentIntentSucceeded(paymentIntent);
+        strunz();
         break;
       case 'payment_method.attached':
         const paymentMethod = event.data.object;
