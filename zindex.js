@@ -19,15 +19,15 @@ let val = Math.floor(Math.random() *5 ) + "db_payment_ok ";
 let utente = "claudio"
 function dbStruff () {
     const value = "payment_complete"
-    console.log("setting values: " + utente + ", event " + value)
-    db.collection(table).doc(utente)
+    db.collection(table).doc("" + new Date().getTime())
           .set({ user: utente, event:value});
-
-}
+    console.log("setting values: " + utente + ", event " + value)
+    }
 
 const dbstuff = {
     strunz:dbStruff
 }
+
 
 module.exports = dbstuff;
 
